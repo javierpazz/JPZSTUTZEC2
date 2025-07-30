@@ -33,7 +33,9 @@ const orderRoutesMob = require('./routes/mob/orderRoutes.js');
 // const mercadoPago
 
 
-dotenv.config();
+// dotenv.config();
+dotenv.config({ path: path.join(__dirname, ".env") });
+
 console.log("jpz");
 console.log(process.env.MONGODB_URI);
 console.log(`"${process.env.MONGODB_URI}"`);
@@ -135,10 +137,23 @@ app.use('/api/configurations', configurationRouter);
 //   res.sendFile(path.join(__dirname, '/frontend/build/index.html'))
 // );
 
-app.use(express.static('public'));
-app.get('*', (req, res) => {
-  res.sendFile(__dirname + '/public/index.html');
-})
+
+const reactPath = "../frontend/dist";
+
+// Serve React static files from /public
+app.use(express.static(path.join(__dirname, reactPath)));
+
+// Catch-all route for React SPA
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, reactPath, "index.html"));
+});
+
+
+
+// app.use(express.static('public'));
+// app.get('*', (req, res) => {
+//   res.sendFile(__dirname + '/public/index.html');
+// })
 
 
 app.use((err, req, res, next) => {

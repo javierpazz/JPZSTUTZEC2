@@ -2,9 +2,9 @@
   "scripts": {
     "start": "node backend/server.js",
     "create:env": "echo MONGODB_URI=mongodb+srv://username:password@cluster0.asdfg.mongodb.net/my_database > backend/.env && echo PORT=3000 >> backend/.env",
-    "install:frontend": "cd frontend && yarn install && yarn build",
-    "install:backend": "cd backend && yarn install",
+    "install:frontend": "cd frontend && npm install && npm run build",
+    "install:backend": "cd backend && npm install",
     "init:git": "rm -rf .git && git init && git add . && git commit -m 'initial_commit' && git log --oneline",
-    "install:all": "yarn create:env && yarn install:frontend && yarn install:backend && yarn init:git"
+    "install:all": "npm run create:env && npm run install:frontend && npm run install:backend && npm run init:git"
   }
 }
