@@ -4,8 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon server.js",
-    "build": "npm install --prefix"
+    "server": "nodemon server.js"
   },
   "author": "",
   "license": "ISC",
