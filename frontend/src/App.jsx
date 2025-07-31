@@ -539,7 +539,7 @@ const [ver, setVer] = useState('2');     // version app ver=2 con/ecommerce
           }
         >
 {/* /////////////////  borrar ecomerce  ////////////////////// */}
-          {(ver==="2") && (
+          {/* {(ver==="2") && (
           <Nav className="flex-column text-white w-100 p-2">
             <Nav.Item>
               <strong>Categories</strong>
@@ -555,7 +555,7 @@ const [ver, setVer] = useState('2');     // version app ver=2 con/ecommerce
               </Nav.Item>
             ))}
           </Nav>
-          )}
+          )} */}
 {/* /////////////////  borrar ecomerce  ////////////////////// */}
         </div>
         <main>
